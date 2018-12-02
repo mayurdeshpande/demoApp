@@ -1,0 +1,39 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+<!--
+  <div style="text-align:center">
+    <h3>{{ title }}</h3>
+  </div>
+-->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Demo App</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="/home">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="!authService.isLoggedIn()">
+        <a routerLink="/signup"
+          ><span class="glyphicon glyphicon-user"></span> Sign Up</a
+        >
+      </li>
+      <li *ngIf="!authService.isLoggedIn()">
+        <a routerLink="/login"
+          ><span class="glyphicon glyphicon-log-in"></span> Login</a
+        >
+      </li>
+      <li *ngIf="authService.isLoggedIn()">
+        <a> Hello {{ authService.getCurrentUser().first_name }}</a>
+      </li>
+      <li *ngIf="authService.isLoggedIn()">
+        <a routerLink="/login"
+          ><span class="glyphicon glyphicon-log-in"></span> Logout</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container"><router-outlet></router-outlet></div>
