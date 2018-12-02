@@ -1,2 +1,3 @@
 # demoApp
-Angular 6 demo app with login, signup
+
+Angular 6 demo app with login, signup and routing
